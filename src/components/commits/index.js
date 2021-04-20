@@ -9,7 +9,7 @@ class ListCommits extends Component {
     async componentDidMount(){
         const {getAllCommits} = this.props
         const owner = 'Yoiset2021'
-        const repo ='gitCommits'
+        const repo ='ejemplo'
         await getAllCommits(owner, repo)
     }
 
