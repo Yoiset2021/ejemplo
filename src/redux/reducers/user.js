@@ -1,6 +1,6 @@
 import {
     GET_USER_SUCCESS
-} from '../actionsTypes'
+} from '../actionTypes'
 
 export default function reducer(state = {}, { type, payload }) {
     switch (type) {

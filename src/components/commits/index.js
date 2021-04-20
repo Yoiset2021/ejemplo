@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import { getAllCommits } from '../../redux/actions'
-import NotResult from './notResult'
+import NotResult from './noResult'
 
 class ListCommits extends Component {
     

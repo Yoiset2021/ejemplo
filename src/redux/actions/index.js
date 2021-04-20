@@ -5,7 +5,7 @@ import {
     GET_ALL_COMMITS_BY_PROYECT_SUCCESS,
     GET_USER_SUCCESS,
     GET_ALL_REPOSITORIES_BY_USER_SUCCESS
-} from '../actionsTypes'
+} from '../actionTypes'
 
 
 const octokit = new Octokit({ auth: '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' })
