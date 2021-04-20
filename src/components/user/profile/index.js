@@ -6,7 +6,8 @@ class Profile extends Component {
 
     async componentDidMount(){
         const {getUser} = this.props
-        await getUser()
+        const username = "Yoiset2021"
+        await getUser(username)
     }
 
     render() { 

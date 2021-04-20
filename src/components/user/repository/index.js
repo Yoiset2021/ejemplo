@@ -6,7 +6,8 @@ class Repository extends Component {
 
     async componentDidMount(){
         const {getAllRepositoriesByUser} = this.props
-        await getAllRepositoriesByUser([])
+        const username = 'Yoiset2021'
+        await getAllRepositoriesByUser(username)
     }
 
     render() {

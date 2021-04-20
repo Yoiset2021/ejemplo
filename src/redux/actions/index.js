@@ -8,7 +8,7 @@ import {
 } from '../actionTypes'
 
 
-const octokit = new Octokit({ auth: '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' })
+const octokit = new Octokit()
 
 export const handleApiError = error => {
     return {
@@ -46,9 +46,10 @@ export const getUserSuccess = response => {
     }
 }
 
-export const getUser = () => async dispatch => {
+export const getUser = username => async dispatch => {
     try {
-        const response = await octokit.request(`GET /user`, {
+        const response = await octokit.request(`GET /users/{username}`, {
+            username,
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
             }
@@ -67,9 +68,10 @@ export const getAllRepositoriesByUserSuccess = response => {
     }
 }
 
-export const getAllRepositoriesByUser = () => async dispatch => {
+export const getAllRepositoriesByUser = username => async dispatch => {
     try {
-        const response = await octokit.request('GET /user/repos', {
+        const response = await octokit.request(`GET /users/{username}/repos`, {
+            username,
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
             }
