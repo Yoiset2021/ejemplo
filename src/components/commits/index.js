@@ -15,6 +15,7 @@ class ListCommits extends Component {
 
     render() {
         const {commits} = this.props
+        console.log(commits[1])
         return ( 
             <div className="card p-2 mt-5">
                 <div className="card-header">
@@ -23,19 +24,19 @@ class ListCommits extends Component {
                 <div className="card-body d-flex justify-content-center">
                         {
                             commits.length > 0 ?
-                                <div className="table-responsive w-50">
+                                <div className="table-responsive ">
                                     <table className="table table-bordered table-hover mt-3" >
                                         <thead className="thead-dark">
                                             <tr className="text-center">
-                                                <th scope="col"> Name User </th>
+                                                <th scope="col"> Author </th>
                                                 <th scope="col"> Message </th>
                                             </tr>
                                         </thead>
                                         <tbody>                    
                                                 {  commits.map(commit => {
                                                     return (
-                                                        <tr key={commit.commit.id} className="text-center">
-                                                            <th scope="col"> {commit.commit.author.name} </th>
+                                                        <tr key={commit.commit.node_id} className="text-center">
+                                                            <th scope="col"> {commit.commit.author.name} {`<${commit.commit.author.email}>`} </th>
                                                             <th scope="col"> {commit.commit.message}  </th>
                                                         </tr>
                                                         )

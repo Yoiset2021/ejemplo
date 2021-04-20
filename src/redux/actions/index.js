@@ -8,7 +8,7 @@ import {
 } from '../actionTypes'
 
 
-const octokit = new Octokit({ auth: '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' })
+const octokit = new Octokit({ auth: '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' })
 
 export const handleApiError = error => {
     return {
