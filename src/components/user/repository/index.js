@@ -11,6 +11,7 @@ class Repository extends Component {
 
     render() {
         const {repositories} = this.props
+        console.log(repositories[0])
         return (
             <div className="p-5">
                 <div className="mb-3 border-bottom solid text-center font-weight-bold "> 

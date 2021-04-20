@@ -15,7 +15,7 @@ class ListCommits extends Component {
 
     render() {
         const {commits} = this.props
-        console.log(commits[1])
+        console.log(commits[0])
         return ( 
             <div className="card p-2 mt-5">
                 <div className="card-header">
@@ -35,7 +35,7 @@ class ListCommits extends Component {
                                         <tbody>                    
                                                 {  commits.map(commit => {
                                                     return (
-                                                        <tr key={commit.commit.node_id} className="text-center">
+                                                        <tr key={commit.sha} className="text-center">
                                                             <th scope="col"> {commit.commit.author.name} {`<${commit.commit.author.email}>`} </th>
                                                             <th scope="col"> {commit.commit.message}  </th>
                                                         </tr>
