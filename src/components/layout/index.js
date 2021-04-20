@@ -3,6 +3,7 @@ import Navigation from '../navigation'
 import Footer from '../footer'
 
 class Layout extends Component {
+
     render() {
         const { children } = this.props
         return (
@@ -22,3 +23,5 @@ class Layout extends Component {
         );
     }
 }
+
+export default Layout
