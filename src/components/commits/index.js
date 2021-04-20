@@ -15,7 +15,6 @@ class ListCommits extends Component {
 
     render() {
         const {commits} = this.props
-        console.log(commits[0])
         return ( 
             <div className="card p-2 mt-5">
                 <div className="card-header">

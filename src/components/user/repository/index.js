@@ -11,7 +11,6 @@ class Repository extends Component {
 
     render() {
         const {repositories} = this.props
-        console.log(repositories[0])
         return (
             <div className="p-5">
                 <div className="mb-3 border-bottom solid text-center font-weight-bold "> 
@@ -22,7 +21,7 @@ class Repository extends Component {
                     {
                         repositories.map(r => {
                             return (
-                                <li key="r.node_id" className="list-group-item d-flex justify-content-center align-items-center"> 
+                                <li key={r.id} className="list-group-item d-flex justify-content-center align-items-center"> 
                                     <h5>{r.name}</h5>
                                 </li>
                             )
