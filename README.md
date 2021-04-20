@@ -4,3 +4,4 @@
 # Step 2: Estructuracion del proyecto
 # Step 3: Creando Layout
 # Step 4: Trabajo con redux
+# Step 5: Funcionalidad commits
