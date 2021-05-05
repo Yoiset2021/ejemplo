@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom'
 
-class Navigation extends Component  {
+export default function Navigation()  {
     
-    render () {
         return ( 
             <nav className="navbar navbar-expand-lg bg-dark navbar-light">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +25,3 @@ class Navigation extends Component  {
             </nav>
          );
     }
-}
- 
-export default Navigation;

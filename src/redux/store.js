@@ -1,18 +1,24 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
-import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
 
-import commits from './reducers/commits'
-import user from './reducers/user'
-import repositories from './reducers/repositories'
+import rootSaga from './sagas'
+import commit from './commit/reducer'
+import user from './user/reducer'
+import repository from './repository/reducer'
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const reducer = combineReducers({
-    commits,
+    commit,
     user,
-    repositories
+    repository
 })
 
-const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
+const sagaMiddleware = createSagaMiddleware()
 
-export default store
+export default function store() {
+    return {
+        ...createStore(reducer, composeEnhancer(applyMiddleware(sagaMiddleware))),
+        runSaga: sagaMiddleware.run(rootSaga)
+    }
+}

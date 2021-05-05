@@ -1,40 +1,41 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux'
-import {getUser} from '../../../redux/actions'
+import React from 'react';
+import useFetchUser from '../../hooks/useFetchUser';
 
-class Profile extends Component {
+import Spinner from '../../Spinner'
+import Error from '../../Error'
+import { Fragment } from 'react';
 
-    async componentDidMount(){
-        const {getUser} = this.props
-        const username = "Yoiset2021"
-        await getUser(username)
-    }
-
-    render() { 
-        const {user} = this.props
-        return ( 
-            <div className="card mt-4">
-                <div className="card-header">
-                    <div className="mt-2 text-center font-weight-bold"> 
-                        Nombre : { user.name } 
-                    </div>
-                </div>
-                <div className="card-body">
-                    <div className="d-flex justify-content-center align-items-center">
-                        <div className="mt-2">
-                            <img className="card-img-top img-fluid img-thumbnail rounded-circle" src={user.avatar_url} alt="avatar"/>
+export default function Profile() {
+    
+const {user, isLoading, error } = useFetchUser() 
+ 
+    return ( 
+        isLoading ? 
+            <Spinner text='OBTENIENDO DATOS DEL USER ...'/>
+            :
+            <Fragment>
+                {!error ? 
+                    <div className="card mt-4">
+                        <div className="card-header">
+                            <div className="mt-2 text-center font-weight-bold"> 
+                                Nombre : {user.name}
+                            </div>
+                        </div>
+                        <div className="card-body">
+                            <div className="d-flex justify-content-center align-items-center">
+                                <div className="mt-2">
+                                    <img className="card-img-top img-fluid img-thumbnail rounded-circle" src={user.avatar_url} alt="avatar"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-         );
-    }
-}
+                    :
+                    <div className=" px-5 mt-5">
+                        <Error/>    
+                    </div>
+                 }
+            </Fragment>
+              
+        );
 
-const mapStateToProps = state => {
-    return {
-        user: state.user
-    }
 }
-
-export default connect(mapStateToProps, {getUser})(Profile);

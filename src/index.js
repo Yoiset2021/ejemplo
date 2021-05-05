@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import { Provider } from 'react-redux'
-import store from './redux/store'
+import storeFn from './redux/store'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Layout from './components/layout'
 import ListCommits from './components/commits'
 import Profile from './components/user/profile'
 import Repository from './components/user/repository'
+
+const store = storeFn() 
 
 ReactDOM.render( 
     <Provider store={store}>

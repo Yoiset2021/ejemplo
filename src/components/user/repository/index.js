@@ -1,43 +1,34 @@
-import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import {getAllRepositoriesByUser} from '../../../redux/actions'
+import React from "react";
+import { Fragment } from "react";
 
-class Repository extends Component {
+import useFetchRepositories from "../../hooks/useFetchRepositories";
+import ListReposotories from './list'
+import Spinner from "../../Spinner";
+import Error from '../../Error'
 
-    async componentDidMount(){
-        const {getAllRepositoriesByUser} = this.props
-        const username = 'Yoiset2021'
-        await getAllRepositoriesByUser(username)
-    }
+export default function Repository() {
 
-    render() {
-        const {repositories} = this.props
-        return (
-            <div className="p-5">
-                <div className="mb-3 border-bottom solid text-center font-weight-bold "> 
-                 <h3> Lista de Repositorios </h3> 
-                </div>
-                <div className="d-flex justify-content-center">
-                    <ul className="list-group">
-                    {
-                        repositories.map(r => {
-                            return (
-                                <li key={r.id} className="list-group-item d-flex justify-content-center align-items-center"> 
-                                    <h5>{r.name}</h5>
-                                </li>
-                            )
-                        })
-                    }
-                    </ul>
-                </div>
-            </div>
-        )
-    }
+  const {repositories, isLoading, error} = useFetchRepositories()
+
+  return (
+    isLoading ? 
+      <Spinner text="OBTENIENDO REPOS DESDE API ..." />
+      : 
+      <div className="px-5">
+      {!error ?
+        <Fragment>
+          <div className="mb-3 mt-5 border-bottom solid text-center font-weight-bold ">
+            <h3> Lista de Repositorios </h3>
+          </div>
+          <div className="d-flex justify-content-center">
+            <ListReposotories repositories={repositories}/>
+          </div>
+        </Fragment>
+        : 
+        <div className="mt-5">
+          <Error/>    
+        </div>
+        }
+      </div>
+  ) 
 }
-
-const mapStateToProps = state => {
-    return {
-        repositories: state.repositories
-    }
-}
-export default connect(mapStateToProps, {getAllRepositoriesByUser})(Repository)
