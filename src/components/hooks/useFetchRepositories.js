@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getAllRepositoriesByUser } from "../../redux/actions/repository";
+import { getAllRepositoriesByUser } from "../../redux/repository/actions";
 
 const useFetchRepositories = () => {
     const dispatch = useDispatch();

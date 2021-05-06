@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 
-import { getAllCommitsByProyect } from "../../redux/actions/commits";
+import { getAllCommitsByProyect } from "../../redux/commit/actions";
 
 const useFetchCommits = () => {
 

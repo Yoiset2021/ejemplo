@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getUser } from '../../redux/actions/user'
+import { getUser } from '../../redux/user/actions'
 
 const useFetchUser = () => {
 

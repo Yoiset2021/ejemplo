@@ -3,7 +3,7 @@ import { Fragment } from "react";
 
 import useFetchRepositories from "../../hooks/useFetchRepositories";
 import ListReposotories from './list'
-import Spinner from "../../Spinner";
+import Loader from "../../Loader";
 import Error from '../../Error'
 
 export default function Repository() {
@@ -12,7 +12,7 @@ export default function Repository() {
 
   return (
     isLoading ? 
-      <Spinner text="OBTENIENDO REPOS DESDE API ..." />
+      <Loader text="OBTENIENDO REPOS DESDE API ..." />
       : 
       <div className="px-5">
       {!error ?

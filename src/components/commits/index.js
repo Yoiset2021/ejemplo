@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import useFetchCommits from "../hooks/useFetchCommits";
-import Spinner from '../Spinner'
+import Loader from '../Loader'
 import ListaCommits from './list'
 import Error from '../Error'
 
@@ -11,7 +11,7 @@ export default () => {
 
   return (
     isLoading ? 
-      <Spinner text='OBTENIENDO COMMITS DEL REPO...'/>
+      <Loader text='OBTENIENDO COMMITS DEL REPO...'/>
     :
     <Fragment>
       { !error ? 

@@ -1,7 +1,7 @@
 import React from 'react';
 import useFetchUser from '../../hooks/useFetchUser';
 
-import Spinner from '../../Spinner'
+import Loader from '../../Loader'
 import Error from '../../Error'
 import { Fragment } from 'react';
 
@@ -11,7 +11,7 @@ const {user, isLoading, error } = useFetchUser()
  
     return ( 
         isLoading ? 
-            <Spinner text='OBTENIENDO DATOS DEL USER ...'/>
+            <Loader text='OBTENIENDO DATOS DEL USER ...'/>
             :
             <Fragment>
                 {!error ? 
