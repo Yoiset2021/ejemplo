@@ -16,6 +16,7 @@ const reducer = combineReducers({
 
 const sagaMiddleware = createSagaMiddleware()
 
+
 export default function store() {
     return {
         ...createStore(reducer, composeEnhancer(applyMiddleware(sagaMiddleware))),

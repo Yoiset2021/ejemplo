@@ -10,6 +10,7 @@ const initialState = {
     error: null
 }
 
+
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case GET_ALL_COMMITS_BY_PROYECT_START:
