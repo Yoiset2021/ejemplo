@@ -15,7 +15,6 @@ function useFetchCommits() {
         const repo = "RegistroFacturas";
         dispatch(getAllCommitsByProyect({ owner, repo }));
     }, []);
-
     return { commits, isLoading, error }
 }
 const exportFunction = {
