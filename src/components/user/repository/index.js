@@ -1,14 +1,14 @@
 import React from "react";
 import { Fragment } from "react";
 
-import useFetchRepositories from "../../hooks/useFetchRepositories";
+import hook from "../../hooks/useFetchRepositories";
 import ListReposotories from './list'
 import Loader from "../../Loader";
 import Error from '../../Error'
 
 export default function Repository() {
 
-  const {repositories, isLoading, error} = useFetchRepositories()
+  const {repositories, isLoading, error} = hook.useFetchRepositories()
 
   return (
     isLoading ? 

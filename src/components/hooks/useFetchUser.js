@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getUser } from '../../redux/user/actions'
 
-const useFetchUser = () => {
+function useFetchUser() {
 
     const dispatch = useDispatch()
     const user = useSelector(state => state.user.data)
@@ -18,4 +18,8 @@ const useFetchUser = () => {
     return { user, isLoading, error }
 }
 
-export default useFetchUser
+const exportFunction = {
+    useFetchUser
+};
+
+export default exportFunction;

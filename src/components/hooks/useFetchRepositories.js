@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getAllRepositoriesByUser } from "../../redux/repository/actions";
 
-const useFetchRepositories = () => {
+function useFetchRepositories() {
     const dispatch = useDispatch();
     const repositories = useSelector(state => state.repository.data);
     const isLoading = useSelector(state => state.repository.isLoading);
@@ -17,4 +17,8 @@ const useFetchRepositories = () => {
     return { repositories, isLoading, error }
 }
 
-export default useFetchRepositories
+const exportFunction = {
+    useFetchRepositories
+};
+
+export default exportFunction;

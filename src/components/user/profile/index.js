@@ -1,5 +1,5 @@
 import React from 'react';
-import useFetchUser from '../../hooks/useFetchUser';
+import hook from '../../hooks/useFetchUser';
 
 import Loader from '../../Loader'
 import Error from '../../Error'
@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 
 export default function Profile() {
     
-const {user, isLoading, error } = useFetchUser() 
+const {user, isLoading, error } = hook.useFetchUser() 
  
     return ( 
         isLoading ? 

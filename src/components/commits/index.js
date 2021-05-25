@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 
-import useFetchCommits from "../hooks/useFetchCommits";
+import hook from "../hooks/useFetchCommits";
 import Loader from '../Loader'
 import ListaCommits from './list'
 import Error from '../Error'
 
-export default () => {
+export default function Commits() {
   
-  const {commits, isLoading, error } = useFetchCommits()
+  const {commits, isLoading, error } = hook.useFetchCommits()
 
   return (
     isLoading ? 
@@ -15,19 +15,11 @@ export default () => {
     :
     <Fragment>
       { !error ? 
-        <div className="card p-2 mt-5">
-          <div className="card-header">
-            <h3 className="text-center"> Lista de commits </h3>
-          </div>
-          <div className="card-body d-flex justify-content-center">
-             <ListaCommits commits={commits}/>  
-          </div>
-        </div>
-      :
+        <ListaCommits commits={commits}/>  
+        :
         <div className="px-5 mt-5">
           <Error/>    
         </div>
-      
       }
     </Fragment>
   );

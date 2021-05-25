@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getAllCommitsByProyect } from "../../redux/commit/actions";
 
-const useFetchCommits = () => {
+function useFetchCommits() {
 
     const dispatch = useDispatch();
     const commits = useSelector(state => state.commit.data);
@@ -18,5 +18,8 @@ const useFetchCommits = () => {
 
     return { commits, isLoading, error }
 }
+const exportFunction = {
+    useFetchCommits
+};
 
-export default useFetchCommits
+export default exportFunction;
