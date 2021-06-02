@@ -12,7 +12,7 @@ export default function Commits() {
   return (
     isLoading ? 
       <Loader text='OBTENIENDO COMMITS DEL REPO...'/>
-    :
+    :    
     <Fragment>
       { !error ? 
         <ListaCommits commits={commits}/>  

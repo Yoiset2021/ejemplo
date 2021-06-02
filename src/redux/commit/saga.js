@@ -17,6 +17,7 @@ export function* getAllCommitsByProyect({ payload }) {
     }
 }
 
+
 export default function* commits() {
     yield takeLatest(GET_ALL_COMMITS_BY_PROYECT_START, getAllCommitsByProyect)
 }

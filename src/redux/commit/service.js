@@ -2,6 +2,7 @@ import { Octokit } from '@octokit/core'
 
 const octokit = new Octokit()
 
+
 export const getAll = async(owner, repo) => {
     const response = await octokit.request(`GET /repos/{owner}/{repo}/commits`, {
         owner,
