@@ -19,6 +19,6 @@ function useFetchRepositories() {
 
 const exportFunction = {
     useFetchRepositories
-};
+}
 
-export default exportFunction;
+export default exportFunction
