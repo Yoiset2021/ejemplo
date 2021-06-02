@@ -22,4 +22,5 @@ const exportFunction = {
     useFetchUser
 };
 
+
 export default exportFunction;
