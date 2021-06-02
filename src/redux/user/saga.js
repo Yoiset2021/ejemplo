@@ -6,6 +6,7 @@ import {
     GET_USER_ERROR
 } from './type'
 
+
 import { getUserProfile } from './service'
 
 export function* getUser({ payload }) {

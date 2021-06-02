@@ -10,5 +10,6 @@ export const getUserProfile = async(username) => {
             'content-type': 'application/www-urlencoded'
         }
     })
+
     return response
 }
