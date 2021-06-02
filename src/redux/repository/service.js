@@ -11,6 +11,6 @@ export const getAllRepositories = async(username) => {
             'content-type': 'application/www-urlencoded'
         }
     })
-    return response
 
+    return response
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import NotResult from '../../noResult'
 
 export default function Repositories({repositories}) {
+    
     return repositories.length > 0 ? 
             (  
             <ul className="list-group"> {
