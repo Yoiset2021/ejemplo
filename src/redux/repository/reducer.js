@@ -24,6 +24,7 @@ export default function reducer(state = initialState, action) {
             {
                 return { data: action.repositories.data, isLoading: false, error: null }
             }
+
         default:
             return state
     }

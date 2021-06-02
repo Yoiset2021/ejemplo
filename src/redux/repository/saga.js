@@ -17,6 +17,7 @@ export function* getAllRepositoriesByUser({ payload }) {
     }
 }
 
+
 export default function* getRepositories() {
     yield takeLatest(GET_REPOSITORIES_BY_USER_START, getAllRepositoriesByUser)
 }
