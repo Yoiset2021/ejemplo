@@ -1,6 +1,6 @@
 import React from 'react';
-import hook from '../../hooks/useFetchUser';
 
+import hook from '../../hooks/useFetchUser';
 import Loader from '../../Loader'
 import Error from '../../Error'
 import { Fragment } from 'react';
